@@ -1,7 +1,6 @@
 import re
 import lib
 
-# CAN WE ADD OPTION TO EXIT PARTWAY THROUGH, OR WAY TOO FIX WHEN YOU'RE GIVEN SUMMARY WITHOUT RESTARTING
 
 # allowed values/limits
 options_process = {'s' : 'serial dilution', 'm' : 'MALDI', 'sm' : 'serial dilution and MALDI plate spot'}
@@ -94,14 +93,6 @@ def input_func():
                         break
                     print('invalid response')
             print('---------------------------------------')
-            
-            # unnecessary
-            # while True:
-            #     print("Valid volume range", volume_range[0], "-", volume_range[-1], "μL")
-            #     dilution_volume = int(input("What is the transfer volume? "))
-            #     if dilution_volume in volume_range:
-            #         break
-            # print('---------------------------------------')
         
         # Input sammple details for maldi spot FOLLOWING serial dilution
         if process == 'sm':
@@ -114,15 +105,16 @@ def input_func():
                     print('Specify range to spot on MALDI plate')
                     sample_ranges_sm = {} # create dictionary of sample ranges
                     for counter_sm in dilution_ranges_name: # for each named dilution range input samples to spot on MALDI plate
-                        range_temp = input(f'{counter_sm} - Sample Range (eg.A1-A6): ') #fix issue w putting single value in range
+                        range_temp = input(f'{counter_sm} - Sample Range (eg.A1-A6): ') # cannot input single value
                         while not bool(re.search(re.compile('^([A-H]([1-9]|1[0-2])[-][A-H]([1-9]|1[0-2]))$|^([A-H]([1-9]|1[0-2]))$'),range_temp)): # confirm sample range is valid
                             print("All samples must have valid range.")
                             dilution_name = input(f"Enter diffrent sample {counter_sm+1} range: ") # enter new sample range if not valid
-                        sample_ranges_sm[counter_sm] = tuple(range_temp.split('-')) # split tuple
+                        sample_ranges_sm[counter_sm] = tuple(range_temp.split('-'))
                     if sample_ranges_sm != [('',)]: # add check for overlapping dilution ranges/ out of range
                         break
                 print('invalid response')
             print('---------------------------------------')
+           
             # Replicate Number
             while True:
                 try:
@@ -132,6 +124,7 @@ def input_func():
                 else:
                     break
             print('---------------------------------------')
+            
             # Buffer Location
             while True:
                 try:
@@ -139,11 +132,12 @@ def input_func():
                     while not bool(re.search(re.compile('^([A-H]([1-9]|1[0-2]))$'),buffer_location)): # confirm location valid
                         buffer_location = input("invalid response - not a valid well ")
                 except:
-                    print('invalid response')
+                    print('invalid response') # stops error if non-integer value is entered
                 else:
-                    buffer_location = tuple(buffer_location.split('-')) # ???????
+                    buffer_location = tuple(buffer_location.split('-'))
                     break
             print('---------------------------------------')
+            
             # Matrix Location 
             while True:
                 try:
@@ -151,7 +145,7 @@ def input_func():
                     while not bool(re.search(re.compile('^([A-H]([1-9]|1[0-2]))$'),matrix_location)): # confirm location valid
                         matrix_location = input("invalid response - not a valid well ")
                 except:
-                    print('invalid response')
+                    print('invalid response') # stops error if non-integer value is entered
                 else: #fix me pls
                     matrix_location = tuple(matrix_location.split('-'))
                     break
@@ -164,7 +158,7 @@ def input_func():
                 try:
                     maldiplate_location = int(input("What slot is the MALDI plate in? ")) # enter MALDI plate location (integer)
                 except:
-                    print('invalid response - not a valid slot')
+                    print('invalid response - not a valid slot') # stops error if non-integer value is entered
                 else:
                     if (maldiplate_location in slot_range) and (maldiplate_location != tipbox_location) and (maldiplate_location != wellplate_location):
                         break # exit loop if location is in range and not already filled
@@ -192,7 +186,7 @@ def input_func():
                     while not bool(re.search(re.compile('^([A-H]([1-9]|1[0-2]))$'),buffer_location)): # confirm location valid
                         buffer_location = input("invalid response - not a valid well ")
                 except:
-                    print('invalid response')
+                    print('invalid response') # stops error if non-integer value is entered
                 else: # remove?
                     buffer_location = tuple(buffer_location.split('-'))
                     break
@@ -203,7 +197,7 @@ def input_func():
                     while not bool(re.search(re.compile('^([A-H]([1-9]|1[0-2]))$'),matrix_location)): # confirm location valid
                         matrix_location = input("invalid response - not a valid well ")
                 except:
-                    print('invalid response')
+                    print('invalid response') # stops error if non-integer value is entered
                 else: #fix me pls # remove?
                     matrix_location = tuple(matrix_location.split('-'))
                     break
