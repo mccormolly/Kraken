@@ -89,7 +89,7 @@ def input_func():
                             print("All samples must have valid range.")
                             range_temp = input(f"{dilution_name} - Sample Range (eg.A1-A6): ") # enter new dilution range if not valid
                         dilution_ranges_name[dilution_name] = tuple(range_temp.split('-'))
-                    if dilution_ranges_name != [('',)]: # WHAT IS THIS?
+                    if dilution_ranges_name != [('',)]: # dilution range must have name
                         break
                     print('invalid response')
             print('---------------------------------------')
@@ -146,7 +146,7 @@ def input_func():
                         matrix_location = input("invalid response - not a valid well ")
                 except:
                     print('invalid response') # stops error if non-integer value is entered
-                else: #fix me pls
+                else: 
                     matrix_location = tuple(matrix_location.split('-'))
                     break
             print('---------------------------------------')
@@ -187,7 +187,7 @@ def input_func():
                         buffer_location = input("invalid response - not a valid well ")
                 except:
                     print('invalid response') # stops error if non-integer value is entered
-                else: # remove?
+                else: 
                     buffer_location = tuple(buffer_location.split('-'))
                     break
             print('---------------------------------------')
@@ -198,7 +198,7 @@ def input_func():
                         matrix_location = input("invalid response - not a valid well ")
                 except:
                     print('invalid response') # stops error if non-integer value is entered
-                else: #fix me pls # remove?
+                else: 
                     matrix_location = tuple(matrix_location.split('-'))
                     break
             print('---------------------------------------')
@@ -213,11 +213,7 @@ def input_func():
         print('Tipbox Slot:', tipbox_location)
         print('96 Well Plate Slot:', wellplate_location)
 
-        # serial dilution
-        if process == 's':
-            print('Dilution Ranges:');[print('\t',key,':',value[0], '-', value[1]) for key, value in dilution_ranges_name.items()]
-            print('Transfer Volume (μL):', dilution_volume)  # Not working rn because in macro
-
+       
         # maldi spot
         if process == 'm':
             print('MALDI Plate Slot:', maldiplate_location)
