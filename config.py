@@ -28,6 +28,3 @@ spot_separation_xy = (49.5/11,13.25/3) # distance between spots on plate (mm)
 spot_arrangement_colrow = (12,8) # number of columns (x) and rows (y) on MALDI plate
 clearance_height_maldi_z = 146 # MALDI plate clearance height when equipped with tip
 maldi_dispense_height_z = 140.5 # MALDI plate dispense when equipped with tip (NOT CLEARANCE HEIGHT)
-
-# liquid handling parameters
-  # pipette_max_volume = 20 # uL (unnecessary)
