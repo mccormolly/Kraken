@@ -18,7 +18,7 @@ Main.py is our central method file. Run this to operate the machine; it will pul
 
 Test_files contains the two methods we used for reproducibility and accuracy testing of the pipette. They might be a good starting point to see how we constructed methods and communicate with both the Kraken and the pipette.
 
-Important note: machine interface needs to be on every level for the Kraken to function.
+Important note: machine_interface.py needs to be on every level for the Kraken to function.
 
 ## Issues/Possible Bugs
 Lib 16-43: lower case and upper case ranges may be recognized as unique when they should be viewed as identical. I think this has been fixed but good to keep an eye out.
