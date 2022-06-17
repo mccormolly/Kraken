@@ -14,7 +14,7 @@ def item_absolute_xy(slot1_origin_xy, slot_delta_xy, item_A1_xy, item_location):
         return (x,y)
 
 # this takes single values in typical labelling format (A1 - H12) and turns the letters into numbers the computer can use
-    # this will work with both upper and lower case letters
+    # this will work with both upper and lower case letters (possible bug here)
 def name_index_to_number_index_single(indicies_name_value):
     if ord(indicies_name_value[0][0]) >= 97:
         row_temp_x1 = ord(indicies_name_value[0][0]) - 97
@@ -25,7 +25,7 @@ def name_index_to_number_index_single(indicies_name_value):
     return indicies_number_value
 
 # this takes ranges in typical labelling format (A1 - H12) and turns the letters into numbers the computer can use
-    # this will work with both upper and lower case letters
+    # this will work with both upper and lower case letters (possible bug here)
 def name_index_to_number_index(indicies_name_value):
     indicies_number_value = []
     for name_range in indicies_name_value:
