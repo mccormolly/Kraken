@@ -1,7 +1,9 @@
 # Kraken
 
 ## Overview
-Welcome to the Kraken! Contained here are all files we had to author in order to operate the Kraken for our purpose. Additional files necessary for machine operation 
+Welcome to the Kraken! 
+
+Contained here are all files we had to author in order to operate the Kraken for our purpose. Kraken/Jubilee assembly and operation information can be found at on the [Jubilee Wiki] (https://jubilee3d.com/index.php?title=Main_Page). 
 
 ## Folder structure
 
