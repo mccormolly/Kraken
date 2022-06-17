@@ -9,9 +9,14 @@ Contained here are all files we had to author in order to operate the Kraken for
 We connect to the Kraken through a hardwired wifi router. All code is uploaded directly to the robot through the computer terminal, and all operation is performed through terminal. To use the robot simply run "main.py" and it will pull from the appropriate files; just make sure they're all on the same level. 
 
 Config.py contains all hardcoded movement parameters and physical object locations. These will change slightly between machines so should be checked.
+
 Input.py is what the user will interact with. It will prompt through method creation and ask for all necessary variable information.
+
 Lib.py contains all true method files. Based on the method selected through input the correct methods will be pulled from here. 
+
 Main.py is our central method file. Run this to operate the machine; it will pull from all other files.
+
+Test_files contains the two methods we used for reproducibility and accuracy testing of the pipette. They might be a good starting point to see how we constructed methods and communicate with both the Kraken and the pipette.
 
 Important note: machine interface needs to be on every level for the Kraken to function.
 
