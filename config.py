@@ -1,6 +1,5 @@
 # Kraken layout and object locations
 
-
 # slot locations
 slot1_origin_xy = (8,-25) # absolute coordinate of top right corner of slot 1
 slot_delta_xy = (100,151) # distance from top right corner of one slot to next (mm)
