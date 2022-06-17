@@ -3,9 +3,12 @@
 ## Overview
 Welcome to the Kraken! 
 
-Contained here are all files we had to author in order to operate the Kraken for our purpose. Kraken/Jubilee assembly and operation information can be found at on the [Jubilee Wiki] (https://jubilee3d.com/index.php?title=Main_Page). 
+Contained here are all files we had to author in order to operate the Kraken for our purpose. Kraken/Jubilee assembly and operation information can be found at on the [Jubilee Wiki](https://jubilee3d.com/index.php?title=Main_Page). 
 
 ## Folder structure
+We connect to the Kraken through a hardwired wifi router. All code is uploaded directly to the robot through the computer terminal, and all operation is performed through terminal. 
+
+Important note: machine interface needs to be on every level. 
 
 ## Citations
 For the Jubilee Project please cite:
