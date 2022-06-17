@@ -166,7 +166,7 @@ def input_func():
             print('---------------------------------------')
             
             # Sample number, location, replicates
-                # Here it is assumed sample 1 is in well A1; subsequent samples move down A until A12 then move to B1 and continue as such
+                # Here it is assumed sample 1 is in well A1; subsequent samples move down A until A12 then move to B1 and continue as such; NO WAY TO SPECIFY SAMPLE LOCATION
             while True:
                 try:
                     number_of_samples_m = int(input("Number of samples: ")) # enter number of samples (integer)
