@@ -29,7 +29,7 @@ def main():
         m.gcode("T-1")
 
 
-if __name__ == "__main__": # this needs fixed/more added
+if __name__ == "__main__": # The print command here is incomplete
     process, tipbox_location, wellplate_location, maldiplate_location, dilution_ranges_name, number_of_replicates_m, buffer_location, matrix_location = input_func()
     main()
     print("Serial dilution complete on",*dilution_ranges_name.values())
